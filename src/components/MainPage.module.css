@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+    animation: slidIn .5s ease-out, fadeIn 1s ease-out;
+    font-size: 50px;
+    animation-delay: .5s, .5s;
+    opacity: 0;
+    /* 애니메이션 끝난상태 유지 */
+    animation-fill-mode: forwards; 
+  }
+
+.scrollBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation-fill-mode: forwards;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 1s, 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  color: rgba(255, 255, 255, 0.5);
+
+  position: absolute;
+  text-align: center;
+  bottom: 20px;
+}
+
+.scrollCommand {
+  font-size: 30px;
+}
+
+.downArrow {
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-right: 0;
+  border-top: 0;
+  transform: rotate(-45deg);
+  font-size: 50px;
+}
+  
+  @keyframes slidIn {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    position: relative;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 밑줄과 텍스트 사이의 간격 */
+    height: 2px; /* 밑줄 두께 */
+    width: 0;
+    background-color: #535bf2; /* 밑줄 색상 */
+    transition: width 0.3s ease; /* 애니메이션 효과 */
+  }
+  
+  a:hover::after {
+    width: 100%; /* 밑줄이 오른쪽으로 확장됨 */
+  }
