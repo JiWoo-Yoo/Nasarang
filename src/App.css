@@ -1,37 +1,26 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
+/* scroll -> change pages */
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+}
 
-.card {
-  padding: 2em;
+.pages {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .read-the-docs {
   color: #888;
 }
 
-.title {
-  animation: slidIn .5s ease-out, fadeIn 1s ease-out;
-  font-size: 100px;
-}
-
-@keyframes slidIn {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;;
-  }
-}
